@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+    <h1>{{ usuario }}</h1>
+
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for m in messages %}
+                <div class="alert-success">
+                {{ m }}
+                </div>
+    {% endfor %} {% endif %} {% endwith %}
+    <ul>
+      {% for f in frases %}
+      <li>{{ f }}</li>
+      {% endfor %}
+    </ul>
+    <form action="/nueva_frase">
+      <label for="nueva_frase">Añadir frase:</label>
+      <input type="text" name="nueva_frase" id="nueva_frase" />
+      <br /><br />
+      <button type="submit">Agregar frase</button>
+    </form>
+
+    <a href="/logout" class="btn-logout">Salir</a>
+    </div>
+  </body>
+</html>
