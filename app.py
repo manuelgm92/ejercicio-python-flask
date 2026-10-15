@@ -62,9 +62,13 @@ def perfil():
         return redirect(url_for("inicio"))
     usuario_actual = session["usuario"]
     frases_usuario = []
-    for k, v in frases_usuarios.items():
-        if usuario_actual == v:
+    if usuario_actual == "admin":
+        for k, v in frases_usuarios.items():
             frases_usuario.append(k)
+    else:  
+        for k, v in frases_usuarios.items():
+            if usuario_actual == v:
+                frases_usuario.append(k)
     
     return render_template("perfil.html", usuario=usuario_actual, frases=frases_usuario)
 
