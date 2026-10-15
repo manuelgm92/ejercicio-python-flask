@@ -7,9 +7,11 @@ def comprobar_ficheros(ruta):
             
 def extraer_contenido(ruta, diccionario):
     with open(ruta, "r") as f:
-        lineas = f.readlines()
-        
-        for linea in lineas:
+        for linea in f:
+            linea=linea.strip()
+            
+            if not linea or ":" not in linea:
+                continue
             k, v = linea.strip().split(":")
             diccionario[k.strip()] = v.strip()
 

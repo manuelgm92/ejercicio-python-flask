@@ -1,6 +1,6 @@
 La vida es bella:usuario1
 Ayer fui a la playa:usuario2
-prueba:manu
+prueba:usuario3
 preuab 2:manu
 Bella es la vida:usuario1
 asd:manu
@@ -11,3 +11,4 @@ funciona:manu
 primera:jose
 segunda:jose
 funciona2:manu
+prueba2:usuario3

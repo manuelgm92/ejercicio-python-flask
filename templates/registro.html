@@ -8,6 +8,17 @@
     </head>
     <body>
         <div class="container">
+            <h1>Registro</h1>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert-error">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+
         <form action="registro" method="POST">
             <label for="usuario">Usuario: </label>
             <input type="text" name="usuario" id="usuario" required>

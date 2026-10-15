@@ -48,9 +48,11 @@ def registro():
                 flash("¡Te has registrado con éxito! Ya puedes iniciar sesión.", "exito")
                 return redirect(url_for("inicio"))
             else:
-                return f"Las contraseñas no coinciden. <a href='/registro'>Volver atrás</a>"
+                flash("Las contraseñas no coinciden.")
+                return redirect(url_for("registro"))
         else:
-            return f"El usuario ya existe. <a href='/login'>Ir a Login</a>"
+            flash("El usuario ya existe.")
+            return redirect(url_for("registro"))
             
     return render_template("registro.html")
 
