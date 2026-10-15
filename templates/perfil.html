@@ -11,6 +11,9 @@
   <body>
     <div class="container">
     <h1>{{ usuario }}</h1>
+    {% if usuario == "admin" %}
+      <h2>Como el usuario es admin muestro...</h2>
+    {% endif %}
 
     {% with messages = get_flashed_messages() %} 
         {% if messages %} 
