@@ -83,3 +83,6 @@ def logout():
     session.clear()
     flash("Ha cerrado sesión con éxito", "cierre de sesión")
     return redirect(url_for("inicio"))
+
+if __name__ == "__main__":
+    app.run()
