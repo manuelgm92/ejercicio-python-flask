@@ -1,7 +1,7 @@
 CREATE TABLE usuarios (
   user_id serial,
   user_name varchar(20) NOT NULL,
-  password varchar(20) NOT NULL,
+  password text NOT NULL,
   PRIMARY KEY (user_id)
 );
 

@@ -27,7 +27,7 @@
         {% endif %} 
       {% endwith %}
 
-      <form action="/login" method="POST">
+      <form action="{{ url_for('inicio') }}" method="POST">
         <label for="usuario">Usuario</label>
         <input
           type="text"
@@ -46,7 +46,7 @@
         <br /><br />
         <button type="submit">Iniciar Sesión</button>
       </form>
-      <a href="/registro" class="btn-secondary">Registrarse</a>
+      <a href="{{ url_for('registro') }}" class="btn-secondary">Registrarse</a>
     </div>
   </body>
 </html>
